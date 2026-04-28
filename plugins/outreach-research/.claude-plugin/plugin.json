@@ -1,0 +1,9 @@
+{
+  "name": "outreach-research",
+  "version": "0.1.0",
+  "description": "Research a single VCEP/ClinGen outreach target and produce a per-recipient email rooted in their committees, panel stage, and gene in focus.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}

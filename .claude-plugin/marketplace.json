@@ -1,1 +1,14 @@
-
+{
+  "name": "deepgene-plugins",
+  "owner": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  },
+  "plugins": [
+    {
+      "name": "outreach-research",
+      "source": "./plugins/outreach-research",
+      "description": "Research a single VCEP/ClinGen outreach target and produce a per-recipient email rooted in their committees, panel stage, and gene in focus."
+    }
+  ]
+}
