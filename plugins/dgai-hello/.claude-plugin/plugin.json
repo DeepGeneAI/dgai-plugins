@@ -1,0 +1,9 @@
+{
+  "name": "dgai-hello",
+  "version": "1.0.0",
+  "description": "Hello World plugin — one slash command and one skill. Use to verify plugin installation from the DeepGene marketplace.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}
