@@ -1,0 +1,9 @@
+{
+  "name": "dgai-hello",
+  "version": "1.0.0",
+  "description": "Hello World plugin.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}
