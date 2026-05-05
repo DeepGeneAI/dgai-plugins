@@ -1,5 +1,5 @@
 ---
-description: Returns a greeting confirming the plugin is installed. Usage: /dgai-hello [name]
+description: Greet someone by name.
 argument-hint: "[name]"
 disable-model-invocation: true
 ---
