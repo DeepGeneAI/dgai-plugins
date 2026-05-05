@@ -10,6 +10,11 @@
       "name": "outreach",
       "source": "./plugins/outreach",
       "description": "Research a single VCEP/ClinGen outreach target and produce a per-recipient email rooted in their committees, panel stage, and gene in focus."
+    },
+    {
+      "name": "dgai-hello",
+      "source": "./plugins/dgai-hello",
+      "description": "Hello World plugin — /dgai-hello [name] returns a greeting. Use to verify plugin installation from the DeepGene marketplace."
     }
   ]
 }
