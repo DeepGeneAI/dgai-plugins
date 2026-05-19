@@ -91,3 +91,17 @@ Both filed as GitHub issues with installation plans (`.github/ISSUE_TEMPLATE/_dr
 ---
 
 Re-scout quarterly, or when something interesting lands in `anthropics/knowledge-work-plugins` or `K-Dense-AI/scientific-agent-skills`.
+
+---
+
+## T2.1 scout pass: output styles
+
+Scouted 2026-05-18.
+
+### 1. hesreallyhim/awesome-claude-code-output-styles-that-i-really-like
+
+Link: https://github.com/hesreallyhim/awesome-claude-code-output-styles-that-i-really-like
+Stars/Fork: 41 / 1
+
+**Skip.** No structural technique to borrow.
+
