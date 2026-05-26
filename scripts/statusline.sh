@@ -7,7 +7,7 @@ input=$(cat)
 MODEL=$(echo "$input" | jq -r '.model.display_name // "—"')
 CTX=$(echo "$input"   | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
 
-# Today's invocation count from the T2.4 JSONL log
+# Today's invocation count from the hook logger JSONL
 TODAY=$(date +%Y-%m-%d)
 LOG="$HOME/.claude/dgai-invocations.jsonl"
 if [[ -f "$LOG" ]]; then
