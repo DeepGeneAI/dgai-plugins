@@ -97,6 +97,7 @@
     .person:last-child { border-bottom: none; }
     .empty { color: var(--muted); font-style: italic; font-size: 13px; }
     .note-text { color: var(--text); line-height: 1.6; }
+    .note-text a { color: var(--accent); word-break: break-all; }
     .footer { text-align: right; font-size: 11px; color: var(--muted); margin-top: 4px; }
     .loading { text-align: center; color: var(--muted); padding: 40px; font-size: 14px; }
     .error-box {
@@ -168,29 +169,10 @@
   </div>
 
   <script>
-    function prompt(gene) {
-      return `You are a ClinGen data assistant. Return ONLY valid JSON, no markdown fences, no explanation.
-
-Look up the ClinGen VCEP (Variant Curation Expert Panel) for: "${gene}"
-
-Return this exact JSON object:
-{
-  "panelName": "full official panel name",
-  "affiliationId": "5-digit ClinGen affiliation ID, or null if unknown",
-  "gene": "primary gene symbol",
-  "disease": "associated disease or condition",
-  "curationStage": "one of: Application, Pilot, Ongoing, Approved, Inactive",
-  "chairs": ["Full Name"],
-  "coordinators": ["Full Name"],
-  "lastUpdated": "YYYY-MM-DD or null",
-  "note": "1-2 sentences of context about this panel"
-}
-
-Use your best knowledge of ClinGen. If a field is uncertain, use null or an empty array. Return JSON only.`;
-    }
-
     function badgeClass(stage) {
       const s = (stage || '').toLowerCase();
+      if (s === 'vcep')           return 'badge-ongoing';
+      if (s === 'gcep')           return 'badge-approved';
       if (s.includes('approved')) return 'badge-approved';
       if (s.includes('ongoing'))  return 'badge-ongoing';
       if (s.includes('pilot'))    return 'badge-pilot';
@@ -218,7 +200,13 @@ Use your best knowledge of ClinGen. If a field is uncertain, use null or an empt
       document.getElementById('panel-disease').textContent = data.disease      || '—';
       document.getElementById('panel-affid').textContent   = data.affiliationId || '—';
       document.getElementById('panel-updated').textContent = data.lastUpdated  || '—';
-      document.getElementById('panel-note').textContent    = data.note         || '—';
+
+      const noteEl = document.getElementById('panel-note');
+      if (data.noteHtml) {
+        noteEl.innerHTML = data.noteHtml;
+      } else {
+        noteEl.textContent = data.note || '—';
+      }
 
       const badge = document.getElementById('stage-badge');
       badge.textContent = data.curationStage || '—';
@@ -228,7 +216,7 @@ Use your best knowledge of ClinGen. If a field is uncertain, use null or an empt
       renderPeople(document.getElementById('coordinators-list'), data.coordinators);
 
       document.getElementById('refreshed-at').textContent =
-        'Data via Claude · Refreshed ' + new Date().toLocaleString();
+        'Data via CSpec · Refreshed ' + new Date().toLocaleString();
 
       document.getElementById('content').style.display     = 'block';
       document.getElementById('placeholder').style.display = 'none';
@@ -248,13 +236,52 @@ Use your best knowledge of ClinGen. If a field is uncertain, use null or an empt
       document.getElementById('lookup-btn').disabled       = true;
 
       try {
-        const raw  = await window.cowork.askClaude(prompt(gene), []);
-        const json = raw.replace(/^```(?:json)?\n?/i, '').replace(/\n?```$/i, '').trim();
-        const data = JSON.parse(json);
+        const panelResult = await window.cowork.callMcpTool(
+          'mcp__plugin_dgai-clingen_clingen__lookup_panel',
+          { gene_or_panel: gene }
+        );
+
+        if (!panelResult.ok || !panelResult.panels || !panelResult.panels.length) {
+          const detail = panelResult.detail || panelResult.error || 'not found';
+          showError('No panel found for "' + gene + '" — ' + detail);
+          document.getElementById('placeholder').style.display = 'block';
+          return;
+        }
+
+        const panel = panelResult.panels[0];
+
+        let chairs = [];
+        if (panel.panel_id) {
+          try {
+            const chairResult = await window.cowork.callMcpTool(
+              'mcp__plugin_dgai-clingen_clingen__list_chairs',
+              { panel_id: panel.panel_id }
+            );
+            if (chairResult.ok && chairResult.chairs) {
+              chairs = chairResult.chairs.map(c => c.name).filter(Boolean);
+            }
+          } catch (_) { /* proceed without chairs */ }
+        }
+
+        const noteHtml = panel.cspec_url
+          ? 'CSpec specification: <a href="' + panel.cspec_url + '" target="_blank" rel="noopener">' + panel.cspec_url + '</a>'
+          : null;
+
         localStorage.setItem('vcep-last-gene', gene);
-        render(data);
+        render({
+          panelName:     panel.name,
+          affiliationId: panel.panel_id,
+          gene:          gene.toUpperCase(),
+          disease:       panel.scope || null,
+          curationStage: panel.kind  || null,
+          chairs:        chairs,
+          coordinators:  [],
+          lastUpdated:   null,
+          note:          null,
+          noteHtml:      noteHtml,
+        });
       } catch (e) {
-        showError('Could not load panel data — check the gene symbol and try again. (' + e.message + ')');
+        showError('Could not load panel data — is the dgai-clingen plugin installed? (' + e.message + ')');
         document.getElementById('placeholder').style.display = 'block';
       } finally {
         document.getElementById('loading').style.display = 'none';
