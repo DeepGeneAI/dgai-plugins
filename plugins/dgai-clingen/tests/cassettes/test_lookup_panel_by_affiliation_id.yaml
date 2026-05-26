@@ -1,43 +1,128 @@
 interactions:
 - request:
-    body: null
+    body: ''
     headers:
       Accept:
       - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Host:
+      - cspec.genome.network
     method: GET
-    uri: https://cspec.genome.network/cspec/Affiliation/id/50013?detail=high
+    uri: https://cspec.genome.network/cspec/id/50013?detail=high
   response:
     body:
-      string: |
-        {
-          "entId": "50013",
-          "entType": "Affiliation",
-          "ldhIri": "https://cspec.genome.network/cspec/Affiliation/id/50013",
-          "entContent": {
-            "affiliation_id": "50013",
-            "affiliation_fullname": "TP53 Variant Curation Expert Panel",
-            "type": "VCEP",
-            "scope": "Curates variants in TP53 in relation to Li-Fraumeni syndrome.",
-            "approval_status": "Approved",
-            "members": [
-              {
-                "name": "Kelvin Chao",
-                "role": "Chair",
-                "institution": "Memorial Sloan Kettering Cancer Center",
-                "email": null
-              },
-              {
-                "name": "Cristina Fortuno",
-                "role": "Coordinator",
-                "institution": "QIMR Berghofer"
-              }
-            ],
-            "approver": ["Kelvin Chao", "Cristina Fortuno"]
-          }
-        }
+      string: "{\n  \"data\": {\n    \"Organization\": [\n      {\n        \"entContent\":
+        {\n          \"approval\": {\n            \"step1\": {\n              \"approved\":
+        true\n            },\n            \"step2\": {\n              \"approvalDate\":
+        \"2017-08-10T00:00:00.000Z\",\n              \"approved\": true\n            },\n
+        \           \"step3\": {\n              \"approved\": true\n            },\n
+        \           \"step4\": {\n              \"approvalDate\": \"2019-08-07T00:00:00.000Z\",\n
+        \             \"approved\": true\n            }\n          },\n          \"curationActivity\":
+        \"Variant Pathogenicity\",\n          \"fullBaseName\": \"TP53\",\n          \"shortBaseName\":
+        \"TP53\",\n          \"shortTitle\": \"TP53 VCEP\",\n          \"title\":
+        \"TP53 Variant Curation Expert Panel\",\n          \"type\": \"Variant Curation
+        Expert Panel\"\n        },\n        \"entId\": \"50013\",\n        \"entIri\":
+        \"http://clinicalgenome.org/affiliation/50013\",\n        \"entType\": \"Organization\",\n
+        \       \"ld\": {\n          \"SequenceVariantInterpretation\": [\n            {\n
+        \             \"entContent\": {\n                \"approvedOn\": \"2025-11-20T20:05:07.488Z\",\n
+        \               \"description\": \"TP53 Rule Specifications for the ACMG/AMP
+        Variant Curation Guidelines\",\n                \"namespace\": \"GN009\",\n
+        \               \"notes\": \"\",\n                \"references\": [\n                  {\n
+        \                   \"source\": \"PubMed\",\n                    \"url\":
+        \"https://pubmed.ncbi.nlm.nih.gov/33300245/\"\n                  }\n                ],\n
+        \               \"releaseNotes\": \"*   v2.0.0\\n    *   Major version 2 VCEP
+        updates with SVI feedback from first submission incorporated\\n    *   Points
+        based evidence combining criteria based on modified Bayesian points system\\n*
+        \  v.2.1.0\\n    *   Minor edit to PS3/BS3 language for clarification purposes.
+        No change to rule codes.\\n*   v.2.2.0\\n    *   Deleted comment from PVS1
+        spreadsheet\\n*   v.2.3.0\\n    *   Minor PP4 language clarifications\\n    *
+        \  Minor BP7 strong code language clarification\\n    *   Updated functional
+        and in silico flowcharts. Publication versions.\\n*   v.2.4.0\\n    *   Minor
+        update of the functional rules to incorporate eligible assay data\\n    *
+        \  Added caveat that functional codes should not be applied if PVS1 is applied
+        for splicing\\n    *   Added clarification to avoid double counting of PS4
+        HER2+ points\\n    *   Minor language clarifications\\n    *   Uploaded additional
+        supporting files\\n    *   Updated Cspec to Tavtigian points based system
+        instead of combining criteria\",\n                \"shortTitle\": \"TP53 VCEP
+        ACMG/AMP Specifications\",\n                \"specificationSource\": \"\",\n
+        \               \"states\": [\n                  {\n                    \"current\":
+        true,\n                    \"event\": {\n                      \"modifiedBy\":
+        \"Megfrone\",\n                      \"name\": \"cspec-released\",\n                      \"prevState\":
+        \"Approved For Release\",\n                      \"timeStamp\": \"2025-11-20T20:05:07.488Z\"\n
+        \                   },\n                    \"name\": \"Released\"\n                  },\n
+        \                 {\n                    \"current\": false,\n                    \"event\":
+        {\n                      \"modifiedBy\": \"Megfrone\",\n                      \"name\":
+        \"cspec-reopened\",\n                      \"prevState\": \"Released\",\n
+        \                     \"timeStamp\": \"2025-10-09T20:24:16.345Z\"\n                    },\n
+        \                   \"name\": \"Pilot Rules In Prep\"\n                  },\n
+        \                 {\n                    \"current\": false,\n                    \"event\":
+        {\n                      \"modifiedBy\": \"Megfrone\",\n                      \"name\":
+        \"pilot-rules-submitted\",\n                      \"prevState\": \"Pilot Rules
+        In Prep\",\n                      \"timeStamp\": \"2025-11-17T21:34:42.887Z\"\n
+        \                   },\n                    \"name\": \"Pilot Rules Submitted\"\n
+        \                 },\n                  {\n                    \"current\":
+        false,\n                    \"event\": {\n                      \"modifiedBy\":
+        \"sharriso\",\n                      \"name\": \"pilot-rules-approved\",\n
+        \                     \"prevState\": \"Pilot Rules Submitted\",\n                      \"timeStamp\":
+        \"2025-11-20T19:28:27.285Z\"\n                    },\n                    \"name\":
+        \"Approved For Release\"\n                  },\n                  {\n                    \"current\":
+        false,\n                    \"event\": {\n                      \"modifiedBy\":
+        \"Megfrone\",\n                      \"name\": \"pilot-rules-withdrawn\",\n
+        \                     \"prevState\": \"Pilot Rules Submitted\",\n                      \"timeStamp\":
+        \"2023-08-07T19:00:30.101Z\"\n                    },\n                    \"name\":
+        \"Pilot Rules In Prep\"\n                  },\n                  {\n                    \"current\":
+        false,\n                    \"event\": {\n                      \"modifiedBy\":
+        \"sharriso\",\n                      \"name\": \"pilot-rules-reviewed\",\n
+        \                     \"prevState\": \"Pilot Rules Submitted\",\n                      \"timeStamp\":
+        \"2025-11-06T18:46:09.915Z\"\n                    },\n                    \"name\":
+        \"Pilot Rules In Prep\"\n                  }\n                ],\n                \"tagNameSpaces\":
+        [\n                  \"009\"\n                ],\n                \"title\":
+        \"ClinGen TP53 Expert Panel Specifications to the ACMG/AMP Variant Interpretation
+        Guidelines for TP53 Version 2.4.0\",\n                \"type\": \"Tavtigian
+        et.al., 2020 - Bayesian adaptation of Richards et.al., 2015\",\n                \"version\":
+        \"2.4.0\",\n                \"versioned\": true\n              },\n              \"entId\":
+        \"GN009\",\n              \"entType\": \"SequenceVariantInterpretation\",\n
+        \             \"ldhId\": \"135637581\",\n              \"ldhIri\": \"https://cspec.genome.network/cspec/SequenceVariantInterpretation/id/135637581\",\n
+        \             \"modified\": \"2025-11-20T20:05:07.877Z\",\n              \"modifier\":
+        \"Megfrone\",\n              \"rev\": \"_koJc3K6---\"\n            }\n          ]\n
+        \       },\n        \"ldhId\": \"135637637\",\n        \"ldhIri\": \"https://cspec.genome.network/cspec/Organization/id/135637637\",\n
+        \       \"modified\": \"2023-04-07T14:55:06.014Z\",\n        \"modifier\":
+        \"cspecAdministrator\",\n        \"rev\": \"_inf5B_G--_\"\n      }\n    ]\n
+        \ },\n  \"metadata\": {\n    \"rendered\": {\n      \"by\": \"https://cspec.genome.network/cspec/srvc\",\n
+        \     \"when\": \"2026-05-26T14:41:46.819Z\"\n    }\n  },\n  \"status\": {\n
+        \   \"code\": 200,\n    \"name\": \"OK\"\n  }\n}"
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Authorization,Accept,Origin,Keep-Alive,DNT,X-Mx-ReqToken,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Forwarded-For
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, HEAD, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Tue, 26 May 2026 14:41:46 GMT
+      Keep-Alive:
+      - timeout=10
+      Server:
+      - nginx
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      cache-control:
+      - no-cache, max-age=0
+      content-length:
+      - '6260'
+      expires:
+      - Tue, 26 May 2026 14:41:44 GMT
     status:
       code: 200
       message: OK

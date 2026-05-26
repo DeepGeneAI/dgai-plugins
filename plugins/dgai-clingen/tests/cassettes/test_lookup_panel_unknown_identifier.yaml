@@ -1,18 +1,48 @@
 interactions:
 - request:
-    body: null
+    body: ''
     headers:
       Accept:
       - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Host:
+      - cspec.genome.network
     method: GET
-    uri: https://cspec.genome.network/cspec/Affiliation/id/99999?detail=high
+    uri: https://cspec.genome.network/cspec/id/99999?detail=high
   response:
     body:
-      string: |
-        {"error": "not found", "id": "99999"}
+      string: "{\n  \"metadata\": {\n    \"rendered\": {\n      \"by\": \"https://cspec.genome.network/cspec/srvc\",\n
+        \     \"when\": \"2026-05-26T14:41:49.089Z\"\n    }\n  },\n  \"status\": {\n
+        \   \"code\": 404,\n    \"msg\": \"Bad Entity - No entities found for identifier
+        '99999'\",\n    \"name\": \"Not Found\"\n  }\n}"
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Authorization,Accept,Origin,Keep-Alive,DNT,X-Mx-ReqToken,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,X-Forwarded-For
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, HEAD, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '271'
       Content-Type:
       - application/json; charset=utf-8
+      Date:
+      - Tue, 26 May 2026 14:41:49 GMT
+      Keep-Alive:
+      - timeout=10
+      Server:
+      - nginx
+      cache-control:
+      - no-cache, max-age=0
+      expires:
+      - Tue, 26 May 2026 14:41:47 GMT
     status:
       code: 404
       message: Not Found

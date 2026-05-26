@@ -117,23 +117,47 @@ class ClinGenClient:
     # ---- public ------------------------------------------------------------
 
     def fetch_affiliation(self, affiliation_id: str) -> dict:
-        """Return the CSpec entity for one affiliation, detail=high."""
-        return self._get_json(
-            f"/Affiliation/id/{affiliation_id}",
-            params={"detail": "high"},
-        )
+        """Return the CSpec entity for one affiliation, detail=high.
+
+        Uses the non-specific /id/{val} endpoint. The type-specific path
+        /Affiliation/id/{val} began returning 400 "INVALID URL" when the
+        CSpec API was updated (confirmed 2026-05-26). The generic endpoint
+        returns the same entity and entContent shape, but now wrapped in the
+        new {"data": {"Organization": [entity]}} envelope — _unwrap_entity
+        strips it.
+        """
+        raw = self._get_json(f"/id/{affiliation_id}", params={"detail": "high"})
+        return _unwrap_entity(raw)
 
     def fetch_gene_links(self, gene_symbol: str) -> dict:
-        """Return the CSpec entity for a gene with its linked-data block.
+        """Return a synthetic entity with ldFor.Affiliation for the gene's panels.
 
-        CSpec genes carry a `ldFor` block listing the affiliations whose
-        criteria specifications reference the gene, which is the closest
-        public answer to 'which VCEPs work on this gene'.
+        CSpec changed in early 2026: /Gene/id/{symbol}/ldFor now returns
+        SequenceVariantInterpretation spec entities instead of a Gene entity
+        with an ldFor.Affiliation block. We fetch each spec's detail to find
+        its parent Organization and rebuild the shape normalize_gene_panel_links
+        expects: {"ldFor": [{"Affiliation": [org, ...]}]}.
         """
-        return self._get_json(
-            f"/Gene/id/{gene_symbol}/ldFor",
-            params={"detail": "med"},
-        )
+        raw = self._get_json(f"/Gene/id/{gene_symbol}/ldFor", params={"detail": "high"})
+        specs = (raw.get("data") or {}).get("SequenceVariantInterpretation") or []
+
+        affiliations: list[dict] = []
+        for spec in specs:
+            ldhId = spec.get("ldhId")
+            if not ldhId:
+                continue
+            try:
+                spec_raw = self._get_json(
+                    f"/SequenceVariantInterpretation/id/{ldhId}",
+                    params={"detail": "high"},
+                )
+                spec_entity = _unwrap_entity(spec_raw)
+                for org in (spec_entity.get("ldFor") or {}).get("Organization") or []:
+                    affiliations.append(org)
+            except (ClinGenError, ClinGenNotFound):
+                continue
+
+        return {"ldFor": [{"Affiliation": affiliations}]}
 
     def close(self) -> None:
         self._client.close()
@@ -143,6 +167,30 @@ class ClinGenClient:
 
     def __exit__(self, *exc: object) -> None:
         self.close()
+
+
+# ---- response unwrapper -----------------------------------------------------
+
+
+def _unwrap_entity(raw: dict) -> dict:
+    """Strip the CSpec API envelope that appeared in early 2026.
+
+    Two new shapes:
+      list-wrapped:  {"data": {"TypeName": [entity, ...]}, ...}
+      direct:        {"data": {entity fields...}, ...}
+
+    Falls through to returning raw unchanged if neither pattern matches
+    (handles old shape and injected test objects).
+    """
+    data = raw.get("data")
+    if not isinstance(data, dict):
+        return raw
+    for val in data.values():
+        if isinstance(val, list) and val and isinstance(val[0], dict):
+            return val[0]
+    if "entId" in data or "entContent" in data or "ldFor" in data:
+        return data
+    return raw
 
 
 # ---- response normalizers ---------------------------------------------------
@@ -174,27 +222,54 @@ def normalize_panel(entity: dict) -> dict:
 
 
 def normalize_gene_panel_links(entity: dict) -> list[dict]:
-    """From a Gene entity's ldFor block, list affiliations referencing the gene."""
+    """From a Gene entity's ldFor block, list affiliations referencing the gene.
+
+    CSpec wraps each ldFor entry as a dict whose key is the entity type, e.g.
+    ``{"Affiliation": [{...}, ...]}`` — but the type name may vary across API
+    versions. We accept any entry whose value is a list and looks like an
+    affiliation (5-digit entId or affiliation_fullname in entContent).
+    """
     out: list[dict] = []
+    seen: set[str] = set()
+
+    def _maybe_add(affil: dict) -> None:
+        content = affil.get("entContent") or {}
+        ent_id = affil.get("entId") or content.get("affiliation_id")
+        if ent_id is None:
+            return
+        ent_id = str(ent_id)  # entId is sometimes an int in ldFor responses
+        if not ent_id or ent_id in seen:
+            return
+        # Filter to affiliation-shaped entities: 5-digit numeric IDs only.
+        if not (ent_id.isdigit() and len(ent_id) == 5):
+            return
+        seen.add(ent_id)
+        out.append(
+            {
+                "panel_id": ent_id,
+                "name": content.get("affiliation_fullname")
+                or content.get("name")
+                or ent_id,
+                "kind": _infer_panel_kind(ent_id, content),
+                "url": f"https://clinicalgenome.org/affiliation/{ent_id}/",
+            }
+        )
+
     for block in entity.get("ldFor") or []:
-        # Each block is a dict like {"Affiliation": [ {...}, {...} ]}.
-        for affil in block.get("Affiliation", []) or []:
-            content = affil.get("entContent") or {}
-            ent_id = affil.get("entId")
-            out.append(
-                {
-                    "panel_id": ent_id,
-                    "name": content.get("affiliation_fullname")
-                    or content.get("name")
-                    or ent_id,
-                    "kind": _infer_panel_kind(ent_id, content),
-                    "url": (
-                        f"https://clinicalgenome.org/affiliation/{ent_id}/"
-                        if ent_id
-                        else None
-                    ),
-                }
-            )
+        if not isinstance(block, dict):
+            continue
+        # Try the historically correct "Affiliation" key first, then fall back
+        # to scanning all values in case the key name changed.
+        affil_list = block.get("Affiliation") or []
+        if not affil_list:
+            # Scan every key whose value is a list of dicts.
+            for val in block.values():
+                if isinstance(val, list):
+                    affil_list = val
+                    break
+        for affil in affil_list or []:
+            if isinstance(affil, dict):
+                _maybe_add(affil)
     return out
 
 
