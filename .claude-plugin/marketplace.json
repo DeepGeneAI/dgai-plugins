@@ -20,6 +20,11 @@
       "name": "dgai-clingen",
       "source": "./plugins/dgai-clingen",
       "description": "MCP server exposing ClinGen panel lookups (lookup_panel, list_chairs) over the public CSpec Registry — no API key required."
+    },
+    {
+      "name": "skill-scout",
+      "source": "./plugins/skill-scout",
+      "description": "Sub-agent that searches external sources for existing skills before building new ones. Returns a scored candidate table and a USE AS-IS / ADAPT / BUILD FROM SCRATCH recommendation."
     }
   ]
 }

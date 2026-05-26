@@ -1,0 +1,9 @@
+{
+  "name": "skill-scout",
+  "version": "1.0.0",
+  "description": "Sub-agent that searches external sources for existing skills before building new ones. Scores candidates on a five-column scorecard and returns a USE AS-IS / ADAPT / BUILD FROM SCRATCH recommendation.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}
