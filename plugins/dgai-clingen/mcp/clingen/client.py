@@ -137,6 +137,11 @@ class ClinGenClient:
         with an ldFor.Affiliation block. We fetch each spec's detail to find
         its parent Organization and rebuild the shape normalize_gene_panel_links
         expects: {"ldFor": [{"Affiliation": [org, ...]}]}.
+
+        The type-specific /SequenceVariantInterpretation/id/{ldhId} path began
+        returning 400 "INVALID URL" alongside /Affiliation/id/{val} when CSpec
+        was updated (confirmed 2026-05-26). Use the generic /id/{ldhId} endpoint
+        instead — it returns the same entity shape.
         """
         raw = self._get_json(f"/Gene/id/{gene_symbol}/ldFor", params={"detail": "high"})
         specs = (raw.get("data") or {}).get("SequenceVariantInterpretation") or []
@@ -148,7 +153,7 @@ class ClinGenClient:
                 continue
             try:
                 spec_raw = self._get_json(
-                    f"/SequenceVariantInterpretation/id/{ldhId}",
+                    f"/id/{ldhId}",
                     params={"detail": "high"},
                 )
                 spec_entity = _unwrap_entity(spec_raw)

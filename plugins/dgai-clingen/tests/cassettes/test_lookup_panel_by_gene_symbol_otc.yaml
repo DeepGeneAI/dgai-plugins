@@ -113,7 +113,7 @@ interactions:
       Host:
       - cspec.genome.network
     method: GET
-    uri: https://cspec.genome.network/cspec/SequenceVariantInterpretation/id/1622722963?detail=high
+    uri: https://cspec.genome.network/cspec/id/1622722963?detail=high
   response:
     body:
       string: "{\n  \"data\": {\n    \"created\": \"2023-10-26T09:39:20.930Z\",\n
