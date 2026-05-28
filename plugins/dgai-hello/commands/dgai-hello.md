@@ -1,7 +1,8 @@
 ---
 description: Greet someone by name.
 argument-hint: "[name]"
-disable-model-invocation: true
 ---
 
-Hello, $ARGUMENTS. The plumbing works.
+Respond with exactly one line: "Hello, $ARGUMENTS. The plumbing works."
+
+If $ARGUMENTS is empty, use "world" in its place. Do not add anything else.

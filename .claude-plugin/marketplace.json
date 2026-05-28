@@ -22,6 +22,11 @@
       "description": "MCP server exposing ClinGen panel lookups (lookup_panel, list_chairs) over the public CSpec Registry — no API key required."
     },
     {
+      "name": "dgai-instrumentation",
+      "source": "./plugins/dgai-instrumentation",
+      "description": "Logs every skill invocation to ~/.claude/dgai-invocations.jsonl. Seed data for the Sprint 4 KPI dashboard."
+    },
+    {
       "name": "invocation-log",
       "source": "./plugins/invocation-log",
       "description": "PostToolUse hook that logs every tool invocation to ~/.claude/dgai-invocations.jsonl."

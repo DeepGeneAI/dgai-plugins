@@ -1,0 +1,9 @@
+{
+  "name": "dgai-instrumentation",
+  "version": "0.1.0",
+  "description": "Logs every skill invocation to ~/.claude/dgai-invocations.jsonl. Seed data for the Sprint 4 KPI dashboard.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}
