@@ -7,6 +7,11 @@
   "description": "DeepGene plugins for VCEP outreach and research",
   "plugins": [
     {
+      "name": "anti-ai-ese",
+      "source": "./plugins/anti-ai-ese",
+      "description": "Required style gate for all DeepGene content. Enforces anti-AI-ese rules — banned words, em dashes, sentence patterns, and structural tells. Must run on every draft before it goes out under a human name."
+    },
+    {
       "name": "outreach",
       "source": "./plugins/outreach",
       "description": "Outreach email skills for the DeepGene/VCEP pipeline. Includes outreach-email (generic research-rooted skill) and dgai-outreach (DG context layer with Gene Report offer and VCEP framing)."

@@ -113,7 +113,9 @@ Do not bake voice rules into this skill. A draft produced here should be structu
 
 ### 5. Anti-ai-ese pass
 
-After the voice pass, run the draft through the `anti-ai-ese` skill. The voice skill will have explicitly carved out exceptions for its sender; everything else still applies. Common failures in outreach drafts:
+**MUST.** Do not return a draft without completing this step. Run the draft through the `anti-ai-ese` skill. The full rules are in `style-guide.md` at the root of this repo. The voice skill will have explicitly carved out exceptions for its sender; everything else still applies.
+
+Common failures in outreach drafts:
 
 - Em dashes for mid-sentence emphasis
 - Three-word staccato sentences

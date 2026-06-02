@@ -1,0 +1,9 @@
+{
+  "name": "anti-ai-ese",
+  "version": "1.0.0",
+  "description": "Enforces the DeepGene/Curation Table anti-AI-ese writing style. Scans any draft for banned words, em dashes, banned sentence patterns, and AI-ese structural tells. Required gate for all outreach emails, guest briefs, gene primers, and any content that goes out under a human name.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}

@@ -167,4 +167,4 @@ This guide is loaded as context by skills that produce prose. It is not a skill 
 
 ## Reference
 
-The narrative version of this guide, with the history of why each rule exists, lives in the deepgene-operations repo at `the-curation-table/style/anti-ai-ese-style-guide.md`. The enforcement skill (same rules, as a Claude Code skill) lives at `.claude/skills/anti-ai-ese/SKILL.md` in that repo. When updating rules, keep both copies in sync.
+The enforcement skill (same rules, invocable as a Claude Code skill) lives at `plugins/anti-ai-ese/skills/anti-ai-ese/SKILL.md` in this repo. The narrative version with the history behind each rule lives in `deepgene-operations` at `the-curation-table/style/anti-ai-ese-style-guide.md`. When updating rules, keep both copies in sync.
