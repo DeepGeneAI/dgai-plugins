@@ -12,6 +12,11 @@
       "description": "Outreach email skills for the DeepGene/VCEP pipeline. Includes outreach-email (generic research-rooted skill) and dgai-outreach (DG context layer with Gene Report offer and VCEP framing)."
     },
     {
+      "name": "vcep-research",
+      "source": "./plugins/vcep-research",
+      "description": "Generic skill that produces a one-page, fully-cited briefing on a ClinGen Curation Expert Panel or gene: status, chairs, scope, recent ClinVar activity, and three to five linked references. Pulls from the dgai-clingen MCP plus PubMed/ClinVar E-utilities."
+    },
+    {
       "name": "dgai-hello",
       "source": "./plugins/dgai-hello",
       "description": "Greeting plugin for testing marketplace installs."

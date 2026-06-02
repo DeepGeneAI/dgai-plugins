@@ -1,0 +1,9 @@
+{
+  "name": "vcep-research",
+  "version": "1.0.0",
+  "description": "Generic skill that produces a one-page, fully-cited Markdown briefing for a ClinGen Variant or Gene Curation Expert Panel (or a gene). Pulls panel status, chairs, and scope from the dgai-clingen MCP; recent ClinVar activity and three to five PubMed references from NCBI E-utilities (or the pubmed-database skill when installed); and a one-line phenotype note from OMIM. Every claim is footnoted to a source URL.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}
