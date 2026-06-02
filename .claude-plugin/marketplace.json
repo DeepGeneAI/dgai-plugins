@@ -9,7 +9,7 @@
     {
       "name": "outreach",
       "source": "./plugins/outreach",
-      "description": "Research a single VCEP/ClinGen outreach target and produce a per-recipient email rooted in their committees, panel stage, and gene in focus."
+      "description": "Outreach email skills for the DeepGene/VCEP pipeline. Includes outreach-email (generic research-rooted skill) and dgai-outreach (DG context layer with Gene Report offer and VCEP framing)."
     },
     {
       "name": "dgai-hello",
