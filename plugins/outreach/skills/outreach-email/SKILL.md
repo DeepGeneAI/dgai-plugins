@@ -113,7 +113,7 @@ Do not bake voice rules into this skill. A draft produced here should be structu
 
 ### 5. Anti-ai-ese pass
 
-**MUST.** Do not return a draft without completing this step. Run the draft through the `anti-ai-ese` skill. The full rules are in `style-guide.md` at the root of this repo. The voice skill will have explicitly carved out exceptions for its sender; everything else still applies.
+**MUST.** Do not return a draft without completing this step. Load `style-guide.md` from the root of this repo and apply every rule in it to the draft. The voice skill will have explicitly carved out exceptions for its sender; everything else in the style guide still applies.
 
 Common failures in outreach drafts:
 
