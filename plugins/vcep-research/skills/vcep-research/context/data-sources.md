@@ -22,6 +22,10 @@ Notes:
 - `list_chairs` falls back to coordinators, then approvers, when CSpec has no explicit chair role. The `role` field tells you which you got.
 - **Footnote link:** the `url` field (`https://clinicalgenome.org/affiliation/<id>/`) for panel facts; `cspec_url` when citing the raw specification.
 
+### Local directory fallback (added 2026-06-09)
+
+When `list_chairs` returns `chair_count: 0` (the current CSpec behavior for most panels), the MCP now automatically falls back to a bundled snapshot at `plugins/dgai-clingen/data/clingen_leadership_contacts.csv`. The snapshot is sourced from the `vcep-directory` repo. Refresh it by copying a fresh export from `vcep-directory/clingen_leadership_contacts.csv` when the data goes stale. The `roster_source` field in the response tells you which path was used (`"cspec"` vs `"local_directory"`).
+
 ### Known data limitations (verified live 2026-06-02)
 
 The current `dgai-clingen` MCP returns less than the briefing ideally wants. Plan around these until the MCP gap is closed (tracked against dgai-clingen / #23):
@@ -29,9 +33,9 @@ The current `dgai-clingen` MCP returns less than the briefing ideally wants. Pla
 - **The gene path returns the CSpec *specification* entity, not the affiliation.** `lookup_panel("OTC")` returns `panel_id: "156"` and `lookup_panel("TP53")` returns `"009"` — three-digit spec IDs, not the five-digit affiliation IDs `list_chairs` needs (OTC's affiliation is 50100; TP53's is 50013). The `url` it builds (`/affiliation/156/`) is therefore wrong on the gene path, and `kind` is unreliable (`null` or `"Working Group"`). What the gene path *is* good for: the real panel **name** (the spec title) and the gene→panel association.
 - **No gene→affiliation bridge.** From a gene symbol the MCP does not give you the five-digit affiliation ID, so you cannot chain `lookup_panel(gene)` → `list_chairs(panel_id)` today. Pass a five-digit affiliation ID directly when you need the roster, or resolve it from the ClinGen affiliation page.
 - **The affiliation path returns null `name`, `status`, and `scope`.** `lookup_panel("50100")` gives `kind: "VCEP"`, the IDs, and `cspec_url`, but `name` is the bare ID and `status`/`scope` are `null`. Get scope and status from the published CSpec specification doc (`cspec_url`) or the ClinGen affiliation page instead.
-- **`list_chairs` currently returns an empty roster** for known panels (50100, 50013 both returned `chair_count: 0`). Fall back to the ClinGen affiliation page for the roster, and footnote that page.
+- **`list_chairs` returns roster data from the local directory fallback** when CSpec returns 400/404 (current behavior for all affiliation ID lookups). Check `roster_source` in the response — `"local_directory"` means the bundled CSV was used. Footnote the ClinGen affiliation page (`panel.url`) for roster facts, not the CSpec URL.
 
-Net effect: from the MCP you can reliably get `kind`, the IDs/URLs, the `cspec_url`, and (gene path) the panel name. Status, scope, and the roster come from the ClinGen affiliation page or the CSpec spec doc. The briefing is still useful and fully citable; the sources just shift.
+Net effect: from the MCP you can reliably get `kind`, the IDs/URLs, `cspec_url`, the roster (via local fallback), and (gene path) the panel name. Status and scope still come from the ClinGen affiliation page or CSpec spec doc.
 
 ## 2. PubMed literature (NCBI E-utilities)
 
