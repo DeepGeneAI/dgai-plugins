@@ -1,0 +1,351 @@
+# known-contacts.yaml
+# Source of truth for the warm-path graph.
+#
+# Nodes = people. Edges = co-membership on panels, co-authorship, direct relationships.
+# Seed contacts (shortest paths start here): bryce_daines, amanda_thomas_wilson, heidi_rehm
+#
+# Edge types:
+#   direct     - explicitly known personal or professional relationship
+#   co_panel   - co-membership on a ClinGen VCEP or GCEP (add `panel:` field)
+#   co_author  - co-authorship on a published paper (add `note:` with PMID or title)
+#
+# Do not add nodes from scraped or inferred data. Verify before committing.
+
+contacts:
+
+  # ── Seeds ──────────────────────────────────────────────────────────────────
+
+  - id: bryce_daines
+    name: "Bryce Daines"
+    role: "Founder / Principal Scientist"
+    org: "DeepGene"
+    seed: true
+    notes: "Seed contact. All paths originate here."
+
+  - id: amanda_thomas_wilson
+    name: "Amanda Thomas-Wilson"
+    role: "Coordinator"
+    org: "New York Genome Center"
+    seed: true
+    panels:
+      - "Urea Cycle Disorders Variant Curation Expert Panel"
+    notes: >
+      Seed contact. Warm collaborative relationship with Bryce.
+      Primary intro source for UCD/metabolic VCEP community. Use Scenario 1 framing.
+
+  - id: heidi_rehm
+    name: "Heidi Rehm"
+    role: "Laboratory Director / ClinGen Leadership"
+    org: "Massachusetts General Hospital / Broad Institute"
+    seed: true
+    panels:
+      - "ClinGen Steering Committee"
+    notes: >
+      Seed contact. Tier 1 — professional warm connection. Use Scenario 2 framing.
+
+  # ── Tier 1 contacts (direct to Bryce via LinkedIn / prior interaction) ────
+
+  - id: melissa_haendel
+    name: "Melissa Haendel"
+    role: "Chief Research Informatics Officer"
+    org: "University of Colorado"
+    panels: []
+    notes: "Tier 1 contact via Bryce's LinkedIn. ClinGen / CTSA / N3C community."
+
+  - id: jason_saliba
+    name: "Jason Saliba"
+    role: "Coordinator"
+    org: "ClinGen"
+    panels:
+      - "ClinGen AI Committee"
+    notes: "Tier 1 contact via Bryce's LinkedIn. AI committee."
+
+  - id: alexander_milosovich
+    name: "Alexander Milosovich"
+    role: "Coordinator"
+    org: "ClinGen"
+    panels: []
+    notes: "Tier 1 contact via Bryce's LinkedIn."
+
+  # ── Direct contacts (warm but not seeds) ──────────────────────────────────
+
+  - id: pamela_robertson
+    name: "Pamela Robertson"
+    role: "Genetic Counselor / Coordinator"
+    org: "ClinGen"
+    panels:
+      - "FBN1 Variant Curation Expert Panel"
+    notes: "Known direct contact."
+
+  - id: kim_worley
+    name: "Kim Worley"
+    role: "Professor of Human and Molecular Genetics"
+    org: "Baylor College of Medicine"
+    panels: []
+    notes: "Known direct contact."
+
+  - id: marni_falk
+    name: "Marni Falk"
+    role: "Executive Director, Mitochondrial Medicine Frontier Program"
+    org: "Children's Hospital of Philadelphia"
+    panels:
+      - "Mitochondrial Disease Gene Curation Expert Panel"
+      - "Urea Cycle Disorders Variant Curation Expert Panel"
+    notes: "Known direct contact. Metabolic disease / UCD community."
+
+  - id: sarah_elsea
+    name: "Sarah Elsea"
+    role: "Professor of Molecular and Human Genetics"
+    org: "Baylor College of Medicine"
+    panels:
+      - "Dopa Decarboxylase (Aromatic L-Amino Acid Decarboxylase) Variant Curation Expert Panel"
+    notes: "Known direct contact. Rare metabolic disease. BCM."
+
+  - id: rui_chen
+    name: "Rui Chen"
+    role: "Professor"
+    org: "Baylor College of Medicine"
+    panels: []
+    notes: "Known direct contact."
+
+  - id: catherine_cottrell
+    name: "Catherine Cottrell"
+    role: "Genetic Counselor"
+    org: "SUNY Polytechnic Institute"
+    panels:
+      - "Somatic Mosaicism of Vascular Anomalies Gene Curation Expert Panel"
+    notes: "Known direct contact."
+
+  - id: larissa_furtado
+    name: "Larissa Furtado"
+    role: "Pathologist"
+    org: "University of Toronto / Hospital for Sick Children"
+    panels: []
+    notes: "Known direct contact."
+
+  - id: xiaowu_gai
+    name: "Xiaowu Gai"
+    role: "Director of Clinical Genomics"
+    org: "Children's Hospital Los Angeles"
+    panels: []
+    notes: "Known direct contact."
+
+  - id: ljubica_caldovic
+    name: "Ljubica Caldovic, PhD"
+    role: "Member"
+    org: "Children's National Research Institute"
+    panels:
+      - "Urea Cycle Disorders Variant Curation Expert Panel"
+      - "Aminoacidopathy Gene Curation Expert Panel"
+      - "Propionic Acidemia and Methylmalonic Acidemia Variant Curation Expert Panel"
+    clingen_profile: "https://clinicalgenome.org/about/people/staff/caldovic-5138"
+    notes: "Known direct contact. Prior relationship with Bryce. UCD, Aminoacidopathy, and PA/MMA panels."
+
+  - id: william_craigen
+    name: "William Craigen"
+    role: "Professor"
+    org: "Baylor College of Medicine"
+    panels:
+      - "Urea Cycle Disorders Variant Curation Expert Panel"
+    notes: >
+      Known direct contact. UCD VCEP. Outreach parked — his primary work is
+      somatic/cancer-related and does not align with the Gene Report offer.
+
+  # ── Second-hop nodes (reachable via panel co-membership) ──────────────────
+
+  - id: andy_drackley
+    name: "Andy Drackley"
+    role: "Genetic Counselor"
+    org: "Northwestern University"
+    panels:
+      - "FBN1 Variant Curation Expert Panel"
+      - "Pediatric Cataract Variant Curation Expert Panel"
+    notes: "FBN1 and Pediatric Cataract VCEPs. Reachable via Pamela Robertson (co-panel FBN1)."
+
+  - id: jessica_mester
+    name: "Jessica Mester"
+    role: "Genetic Counselor"
+    org: "Cleveland Clinic"
+    panels:
+      - "PTEN Variant Curation Expert Panel"
+    notes: "PTEN VCEP. Reachable via Heidi Rehm."
+
+  - id: jenny_goldstein
+    name: "Jenny Goldstein"
+    role: "Assistant Professor"
+    org: "Cornell University"
+    panels:
+      - "Cerebral Creatine Deficiency Syndromes Variant Curation Expert Panel"
+      - "Lysosomal Diseases Gene Curation Expert Panel"
+    notes: "Metabolic disease / lysosomal GCEP. Reachable via Amanda."
+
+  - id: christina_hung
+    name: "Christina Hung"
+    role: "Genetic Counselor"
+    org: "Case Western Reserve University"
+    panels:
+      - "Galactosemia Variant Curation Expert Panel"
+    notes: "Galactosemia VCEP. Reachable via Marni Falk (metabolic disease community)."
+
+  - id: andrew_stergachis
+    name: "Andrew Stergachis"
+    role: "Assistant Professor of Medicine"
+    org: "University of Washington"
+    panels:
+      - "Glucose-6-phosphate dehydrogenase Variant Curation Expert Panel"
+    notes: "UW / G6PD VCEP. Reachable via Heidi Rehm (UW connection)."
+
+  - id: linnea_baudhuin
+    name: "Linnea Baudhuin"
+    role: "Associate Professor of Laboratory Medicine"
+    org: "Mayo Clinic"
+    panels:
+      - "FBN1 Variant Curation Expert Panel"
+    notes: "FBN1 VCEP. Co-panel with Andy Drackley and Pamela Robertson."
+
+  - id: stephan_zuechner
+    name: "Stephan Züchner"
+    role: "Professor of Human Genetics"
+    org: "University of Miami"
+    panels:
+      - "Charcot-Marie-Tooth Disease Gene Curation Expert Panel"
+      - "Charcot-Marie-Tooth Disease Variant Curation Expert Panel"
+    notes: "CMT VCEPs. Reachable via Heidi Rehm (ClinGen governance)."
+
+relationships:
+
+  # ── Direct: Bryce ↔ everyone he knows personally ─────────────────────────
+
+  - from: bryce_daines
+    to: amanda_thomas_wilson
+    type: direct
+    note: "Warm collaborative relationship; primary intro source"
+
+  - from: bryce_daines
+    to: heidi_rehm
+    type: direct
+    note: "Tier 1 professional warm connection"
+
+  - from: bryce_daines
+    to: melissa_haendel
+    type: direct
+    note: "Tier 1 via LinkedIn"
+
+  - from: bryce_daines
+    to: jason_saliba
+    type: direct
+    note: "Tier 1 via LinkedIn"
+
+  - from: bryce_daines
+    to: alexander_milosovich
+    type: direct
+    note: "Tier 1 via LinkedIn"
+
+  - from: bryce_daines
+    to: pamela_robertson
+    type: direct
+
+  - from: bryce_daines
+    to: kim_worley
+    type: direct
+
+  - from: bryce_daines
+    to: marni_falk
+    type: direct
+    note: "Metabolic disease community"
+
+  - from: bryce_daines
+    to: sarah_elsea
+    type: direct
+
+  - from: bryce_daines
+    to: rui_chen
+    type: direct
+
+  - from: bryce_daines
+    to: catherine_cottrell
+    type: direct
+
+  - from: bryce_daines
+    to: larissa_furtado
+    type: direct
+
+  - from: bryce_daines
+    to: xiaowu_gai
+    type: direct
+
+  - from: bryce_daines
+    to: ljubica_caldovic
+    type: direct
+    note: "UCD VCEP community"
+
+  - from: bryce_daines
+    to: william_craigen
+    type: direct
+    note: "UCD community; outreach parked"
+
+  # ── Co-panel: Amanda's metabolic / UCD network ────────────────────────────
+
+  - from: amanda_thomas_wilson
+    to: ljubica_caldovic
+    type: co_panel
+    panel: "Urea Cycle Disorders Variant Curation Expert Panel"
+
+  - from: amanda_thomas_wilson
+    to: marni_falk
+    type: co_panel
+    panel: "Urea Cycle Disorders Variant Curation Expert Panel"
+
+  - from: amanda_thomas_wilson
+    to: william_craigen
+    type: co_panel
+    panel: "Urea Cycle Disorders Variant Curation Expert Panel"
+
+  - from: amanda_thomas_wilson
+    to: jenny_goldstein
+    type: co_panel
+    panel: "Lysosomal Diseases Gene Curation Expert Panel"
+    note: "Both active in the metabolic disease VCEP community"
+
+  # ── Co-panel: Heidi's ClinGen leadership network ──────────────────────────
+
+  - from: heidi_rehm
+    to: jessica_mester
+    type: co_panel
+    panel: "PTEN Variant Curation Expert Panel"
+
+  - from: heidi_rehm
+    to: andrew_stergachis
+    type: direct
+    note: "UW genetics community"
+
+  - from: heidi_rehm
+    to: stephan_zuechner
+    type: co_panel
+    panel: "ClinGen Steering Committee"
+    note: "Both active in ClinGen governance"
+
+  # ── Co-panel: FBN1 cluster ─────────────────────────────────────────────────
+
+  - from: pamela_robertson
+    to: andy_drackley
+    type: co_panel
+    panel: "FBN1 Variant Curation Expert Panel"
+
+  - from: pamela_robertson
+    to: linnea_baudhuin
+    type: co_panel
+    panel: "FBN1 Variant Curation Expert Panel"
+
+  - from: andy_drackley
+    to: linnea_baudhuin
+    type: co_panel
+    panel: "FBN1 Variant Curation Expert Panel"
+
+  # ── Co-panel: metabolic disease cluster ───────────────────────────────────
+
+  - from: marni_falk
+    to: christina_hung
+    type: co_panel
+    panel: "Mitochondrial Disease Gene Curation Expert Panel"
+    note: "Co-membership in the metabolic disease GCEP community"
