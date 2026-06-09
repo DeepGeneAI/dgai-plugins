@@ -1,0 +1,9 @@
+{
+  "name": "dgai-gene-brief",
+  "version": "1.0.0",
+  "description": "DeepGene context layer on top of the gene-brief skill. Wraps the generic cover document with the requesting panel's specific situation and the pain point the delivered Gene Report addresses (conflicts, reclassification candidates, or VUS backlog). The combined output is the cover document that ships with each Gene Report Card.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}

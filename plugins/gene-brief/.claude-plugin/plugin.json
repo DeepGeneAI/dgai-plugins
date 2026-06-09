@@ -1,0 +1,9 @@
+{
+  "name": "gene-brief",
+  "version": "1.0.0",
+  "description": "Produces a practitioner-level cover document for a gene/VCEP: disease overview, current VCEP protocol status, evidence-code challenges, classification-relevant literature, and open questions. Intended to ship as the cover document with a Gene Report or as standalone research ahead of a call. Generic logic only — no DeepGene content. The DG context layer is in the dgai-gene-brief plugin.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}
