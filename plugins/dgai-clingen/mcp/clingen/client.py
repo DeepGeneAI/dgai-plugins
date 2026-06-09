@@ -8,12 +8,20 @@ two queries and a normalizer — so the MCP tools stay thin.
 """
 from __future__ import annotations
 
+import csv
 import logging
 import re
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Any, Iterable
 
 import httpx
+
+# Bundled snapshot of the ClinGen leadership directory.
+# Source: vcep-directory/clingen_leadership_contacts.csv (refresh periodically).
+DATA_DIR = Path(__file__).parent.parent.parent / "data"
+_PANEL_INDEX_CACHE: dict[str, str] | None = None  # panel_id -> panel_name
+_ROSTER_CACHE: list[dict] | None = None           # parsed CSV rows
 
 DEFAULT_BASE_URL = "https://cspec.genome.network/cspec"
 DEFAULT_TIMEOUT = 5.0  # seconds, end-to-end. Acceptance target is < 5s.
@@ -314,6 +322,81 @@ def extract_chairs(entity: dict) -> list[dict]:
 
     # Drop entries with no name at all — those are useless.
     return [c for c in chairs if c.get("name")]
+
+
+# ---- local directory fallback -----------------------------------------------
+#
+# CSpec currently returns an empty roster for most panels. We fall back to a
+# bundled snapshot of clingen_leadership_contacts.csv (from vcep-directory).
+
+
+def _load_panel_index() -> dict[str, str]:
+    """Return a {panel_id: panel_name} dict from the bundled panel index JSON."""
+    global _PANEL_INDEX_CACHE
+    if _PANEL_INDEX_CACHE is not None:
+        return _PANEL_INDEX_CACHE
+    path = DATA_DIR / "clingen_panel_index.json"
+    if not path.exists():
+        log.warning("panel index not found at %s", path)
+        _PANEL_INDEX_CACHE = {}
+        return _PANEL_INDEX_CACHE
+    import json
+    data = json.loads(path.read_text(encoding="utf-8"))
+    _PANEL_INDEX_CACHE = {row["panel_id"]: row["name"] for row in data if "panel_id" in row}
+    return _PANEL_INDEX_CACHE
+
+
+def _load_roster_csv() -> list[dict]:
+    """Return all rows from the bundled leadership contacts CSV."""
+    global _ROSTER_CACHE
+    if _ROSTER_CACHE is not None:
+        return _ROSTER_CACHE
+    path = DATA_DIR / "clingen_leadership_contacts.csv"
+    if not path.exists():
+        log.warning("leadership contacts CSV not found at %s", path)
+        _ROSTER_CACHE = []
+        return _ROSTER_CACHE
+    with path.open(encoding="utf-8", newline="") as fh:
+        _ROSTER_CACHE = list(csv.DictReader(fh))
+    return _ROSTER_CACHE
+
+
+def get_local_roster(panel_id: str) -> list[dict]:
+    """Return chairs and coordinators for a panel from the local CSV snapshot.
+
+    Looks up the panel name by ID, then filters the leadership CSV for rows
+    where all_panels_and_roles contains that panel name with role Chairs or
+    Coordinators. Returns a list in the same shape as extract_chairs().
+    """
+    index = _load_panel_index()
+    panel_name = index.get(panel_id)
+    if not panel_name:
+        log.debug("panel_id %s not found in local panel index", panel_id)
+        return []
+
+    rows = _load_roster_csv()
+    results: list[dict] = []
+    for row in rows:
+        panels_and_roles = row.get("all_panels_and_roles", "")
+        # Match e.g. "Urea Cycle Disorders Variant Curation Expert Panel (Chairs)"
+        for target_role in ("Chairs", "Coordinators"):
+            marker = f"{panel_name} ({target_role})"
+            if marker in panels_and_roles:
+                results.append({
+                    "name": row.get("person_name", "").strip(),
+                    "role": target_role.rstrip("s"),  # "Chair" / "Coordinator"
+                    "affiliation": row.get("institution", "").strip() or None,
+                    "email": (
+                        row.get("clingen_email", "").strip()
+                        or row.get("orcid_emails", "").strip()
+                        or None
+                    ),
+                    "source": "local_directory",
+                })
+                break  # one role per person per panel
+
+    log.debug("local roster for %s (%s): %d entries", panel_name, panel_id, len(results))
+    return results
 
 
 # ---- internals --------------------------------------------------------------

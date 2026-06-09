@@ -1,0 +1,9 @@
+{
+  "name": "warm-path",
+  "version": "1.0.0",
+  "description": "Finds the shortest warm introduction path from a seed contact (Bryce, Amanda, Heidi) to any target person in the ClinGen/VCEP network. Reads context/known-contacts.yaml as the source of truth; no scraping. Returns path nodes and recommended intro framing.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}

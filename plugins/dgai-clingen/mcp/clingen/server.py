@@ -22,8 +22,10 @@ from .client import (
     ClinGenClient,
     ClinGenError,
     ClinGenNotFound,
+    _load_panel_index,
     classify_identifier,
     extract_chairs,
+    get_local_roster,
     normalize_gene_panel_links,
     normalize_panel,
 )
@@ -40,6 +42,12 @@ mcp = FastMCP("clingen")
 # Lazy module-level client. We keep one per process so connection pooling
 # kicks in across calls.
 _client: ClinGenClient | None = None
+
+
+def _panel_from_index(panel_id: str) -> dict[str, Any]:
+    """Return minimal panel metadata from the local panel index."""
+    name = _load_panel_index().get(panel_id, "")
+    return {"panel_id": panel_id, "name": name, "source": "local_directory"}
 
 
 def _get_client() -> ClinGenClient:
@@ -130,31 +138,28 @@ def list_chairs(panel_id: str) -> dict[str, Any]:
         }
 
     client = _get_client()
+    entity = None
     try:
         entity = client.fetch_affiliation(ident.value)
-    except ClinGenNotFound as exc:
-        return {
-            "ok": False,
-            "error": "not_found",
-            "detail": str(exc),
-            "panel_id": ident.value,
-        }
-    except ClinGenError as exc:
-        log.exception("CSpec call failed")
-        return {
-            "ok": False,
-            "error": "upstream_error",
-            "detail": str(exc),
-            "panel_id": ident.value,
-        }
+    except (ClinGenNotFound, ClinGenError) as exc:
+        log.warning("CSpec unavailable for panel %s: %s — trying local fallback", ident.value, exc)
 
-    chairs = extract_chairs(entity)
+    chairs = extract_chairs(entity) if entity else []
+    roster_source = "cspec" if (entity and chairs) else "unknown"
+    if not chairs:
+        chairs = get_local_roster(ident.value)
+        if chairs:
+            roster_source = "local_directory"
+            log.debug("used local directory fallback for panel %s", ident.value)
+
+    panel_meta = normalize_panel(entity) if entity else _panel_from_index(ident.value)
     return {
         "ok": True,
         "panel_id": ident.value,
-        "panel": normalize_panel(entity),
+        "panel": panel_meta,
         "chairs": chairs,
         "chair_count": len(chairs),
+        "roster_source": roster_source,
     }
 
 

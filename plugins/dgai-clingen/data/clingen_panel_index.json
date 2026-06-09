@@ -1,0 +1,1090 @@
+[
+  {
+    "panel_id": "40003",
+    "name": "Arrhythmogenic Right Ventricular Cardiomyopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40003/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "40045",
+    "name": "Brugada Syndrome Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40045/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50002",
+    "name": "Cardiomyopathy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50002/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40074",
+    "name": "Catecholaminergic Polymorphic Ventricular Tachycardia Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40074/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "40130",
+    "name": "Congenital Heart Disease Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40130/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50130",
+    "name": "Congenital Heart Disease Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50130/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50148",
+    "name": "Desmosomal Cardiomyopathy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50148/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40035",
+    "name": "Dilated Cardiomyopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40035/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50004",
+    "name": "Familial Hypercholesterolemia Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50004/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50046",
+    "name": "FBN1 Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50046/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40104",
+    "name": "Hereditary Cardiovascular Disease Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40104/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40044",
+    "name": "Heritable Thoracic Aortic Aneurysm and Dissection Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40044/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "40008",
+    "name": "Hypertrophic Cardiomyopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40008/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "40025",
+    "name": "Long QT Syndrome Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40025/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50108",
+    "name": "Potassium Channel Arrhythmia Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50108/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40071",
+    "name": "Pulmonary Hypertension Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40071/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50071",
+    "name": "Pulmonary Hypertension Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50071/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50169",
+    "name": "RYR2 Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50169/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40075",
+    "name": "Short QT Syndrome Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40075/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50160",
+    "name": "Sodium and Calcium Channel Arrhythmia Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Cardiovascular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50160/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40016",
+    "name": "Monogenic Diabetes Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Endocrinology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40016/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50016",
+    "name": "Monogenic Diabetes Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Endocrinology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50016/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40007",
+    "name": "Hearing Loss Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Hearing Loss CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40007/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50007",
+    "name": "Hearing Loss Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hearing Loss CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50007/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50041",
+    "name": "Coagulation Factor Deficiency Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hemostasis/Thrombosis CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50041/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40028",
+    "name": "Hemostasis/Thrombosis Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Hemostasis/Thrombosis CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40028/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50037",
+    "name": "Hereditary Hemorrhagic Telangiectasia Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hemostasis/Thrombosis CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50037/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50040",
+    "name": "Platelet Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hemostasis/Thrombosis CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50040/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50064",
+    "name": "Thrombosis Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hemostasis/Thrombosis CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50064/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50051",
+    "name": "von Willebrand Disease Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hemostasis/Thrombosis CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50051/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40042",
+    "name": "Breast/Ovarian Cancer Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40042/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "40157",
+    "name": "Childhood, Adolescent and Young Adult Cancer Predisposition Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40157/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40043",
+    "name": "Colon Cancer Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40043/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50050",
+    "name": "DICER1 and miRNA-Processing Gene Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50050/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "51050",
+    "name": "Endocrine Tumor Predisposition Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/51050/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50087",
+    "name": "ENIGMA BRCA1 and BRCA2 Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50087/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50014",
+    "name": "Gastric Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50014/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50039",
+    "name": "Hereditary Breast, Ovarian and Pancreatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50039/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40023",
+    "name": "Hereditary Cancer Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40023/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50099",
+    "name": "InSiGHT Hereditary Colorectal Cancer/Polyposis Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50099/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50034",
+    "name": "Myeloid Malignancy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50034/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50114",
+    "name": "Neurofibromatoses and Schwannomatosis Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50114/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50163",
+    "name": "Ocular Oncology Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50163/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50012",
+    "name": "PTEN Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50012/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50013",
+    "name": "TP53 Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50013/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50036",
+    "name": "VHL Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Hereditary Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50036/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40080",
+    "name": "Antibody Deficiencies Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Immunology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40080/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50095",
+    "name": "Antibody Deficiencies Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Immunology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50095/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50128",
+    "name": "Hereditary Angioedema Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Immunology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50128/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40145",
+    "name": "Primary Immune Regulatory Disorders Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Immunology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40145/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40081",
+    "name": "SCID-CID Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Immunology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40081/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50091",
+    "name": "Severe Combined Immunodeficiency Disease Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Immunology CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50091/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50048",
+    "name": "ACADVL Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50048/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40011",
+    "name": "Aminoacidopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40011/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50047",
+    "name": "Cerebral Creatine Deficiency Syndromes Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50047/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40135",
+    "name": "Congenital Disorders of Glycosylation Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40135/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50118",
+    "name": "Dopa Decarboxylase (Aromatic L-Amino Acid Decarboxylase) Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50118/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40010",
+    "name": "Fatty Acid Oxidation Disorders Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40010/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50136",
+    "name": "Galactosemia Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50136/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40097",
+    "name": "General Inborn Errors of Metabolism Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40097/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50147",
+    "name": "Glucose-6-phosphate dehydrogenase Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50147/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40110",
+    "name": "Lysosomal Diseases Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40110/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50009",
+    "name": "Lysosomal Diseases Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50009/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50027",
+    "name": "Mitochondrial Disease Nuclear and Mitochondrial Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50027/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40027",
+    "name": "Mitochondrial Diseases Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40027/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40049",
+    "name": "Peroxisomal Disorders Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40049/",
+    "status": "Inactive"
+  },
+  {
+    "panel_id": "50049",
+    "name": "Peroxisomal Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50049/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50015",
+    "name": "Phenylketonuria Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50015/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50162",
+    "name": "Propionic Acidemia and Methylmalonic Acidemia Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50162/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50100",
+    "name": "Urea Cycle Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Inborn Errors of Metabolism CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50100/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50146",
+    "name": "Alport Syndrome Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Kidney Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50146/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40069",
+    "name": "Complement-Mediated Kidney Diseases Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Kidney Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40069/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40070",
+    "name": "Congenital Anomalies of the Kidney and Urinary Tract Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Kidney Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40070/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40068",
+    "name": "Glomerulopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Kidney Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40068/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40066",
+    "name": "Kidney Cystic and Ciliopathy Disorders Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Kidney Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40066/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50066",
+    "name": "Kidney Cystic and Ciliopathy Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Kidney Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50066/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40067",
+    "name": "Tubulopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Kidney Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40067/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40020",
+    "name": "Brain Malformations Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40020/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50020",
+    "name": "Brain Malformations Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50020/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40113",
+    "name": "Cerebral Palsy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40113/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40005",
+    "name": "Epilepsy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40005/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50105",
+    "name": "Epilepsy Sodium Channel Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50105/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50078",
+    "name": "GRIN Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50078/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40006",
+    "name": "Intellectual Disability and Autism Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40006/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40107",
+    "name": "Leukodystrophy and Leukoencephalopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40107/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50107",
+    "name": "Leukodystrophy and Leukoencephalopathy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50107/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50022",
+    "name": "Rett and Angelman-like Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurodevelopmental Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50022/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40096",
+    "name": "Amyotrophic Lateral Sclerosis Spectrum Disorders Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40096/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50096",
+    "name": "Amyotrophic Lateral Sclerosis Spectrum Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50096/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40155",
+    "name": "Cerebellar Ataxia Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40155/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40063",
+    "name": "Charcot-Marie-Tooth Disease Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40063/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50063",
+    "name": "Charcot-Marie-Tooth Disease Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50063/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40031",
+    "name": "Congenital Myopathies Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40031/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50031",
+    "name": "Congenital Myopathies Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50031/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50061",
+    "name": "Limb Girdle Muscular Dystrophy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50061/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40151",
+    "name": "Muscular Dystrophies and Myopathies Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40151/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40156",
+    "name": "Neurovascular Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40156/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40079",
+    "name": "Parkinson's Disease Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40079/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50079",
+    "name": "Parkinson's Disease Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Neurological Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50079/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50140",
+    "name": "ABCA4 Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50140/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50154",
+    "name": "Albinism Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50154/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40077",
+    "name": "Glaucoma and Neuro-Ophthalmology Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40077/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50053",
+    "name": "Glaucoma Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50053/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50082",
+    "name": "Leber Congenital Amaurosis/early onset Retinal Dystrophy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50082/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50158",
+    "name": "Maculopathy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50158/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50132",
+    "name": "Ocular Anterior Segment Disorder Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50132/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50090",
+    "name": "Optic Nerve Atrophy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50090/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50166",
+    "name": "Pediatric Cataract Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50166/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40072",
+    "name": "Retina Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40072/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50167",
+    "name": "Rhodopsin Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50167/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50086",
+    "name": "X-linked Inherited Retinal Disease Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50086/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40026",
+    "name": "General Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40026/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50052",
+    "name": "Hemoglobinopathy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50052/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50038",
+    "name": "Malignant Hyperthermia Susceptibility Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50038/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40164",
+    "name": "Somatic Mosaicism of Vascular Anomalies Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40164/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40060",
+    "name": "Syndromic Disorders Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Ocular CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40060/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40138",
+    "name": "Interstitial Lung Disease Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Pulmonary CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40138/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40102",
+    "name": "Motile Ciliopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Pulmonary CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40102/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50102",
+    "name": "Motile Ciliopathy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Pulmonary CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50102/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "40021",
+    "name": "RASopathy Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "RASopathy CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40021/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50021",
+    "name": "RASopathy Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "RASopathy CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50021/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40073",
+    "name": "Male Infertility Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Reproduction and Pregnancy CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40073/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40106",
+    "name": "Prenatal Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Reproduction and Pregnancy CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40106/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40139",
+    "name": "Monogenic Autoinflammatory Diseases Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Rheumatologic Autoimmune Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40139/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40123",
+    "name": "Monogenic Systemic and Incomplete Lupus Erythematosus Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Rheumatologic Autoimmune Disease CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40123/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40059",
+    "name": "Craniofacial Malformations Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Skeletal Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40059/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "40065",
+    "name": "Skeletal Disorders Gene Curation Expert Panel",
+    "type": "GCEP",
+    "cdwg": "Skeletal Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/40065/",
+    "status": "Active"
+  },
+  {
+    "panel_id": "50065",
+    "name": "Skeletal Disorders Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Skeletal Disorders CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50065/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50129",
+    "name": "BCR::ABL1-like B-lymphoblastic Leukemia/Lymphoma Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50129/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50168",
+    "name": "EGFR Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50168/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50153",
+    "name": "Established Significance Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50153/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50098",
+    "name": "Fibroblast Growth Factor Receptor Mutations (SNVs) Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50098/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50111",
+    "name": "FLT3 (Fms Related Receptor Tyrosine Kinase 3) Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50111/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50115",
+    "name": "Histone H3 Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50115/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50152",
+    "name": "MAPK/ERK Pathway Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50152/",
+    "status": "In Process"
+  },
+  {
+    "panel_id": "50089",
+    "name": "NTRK Fusions Somatic Cancer Variant Curation Expert Panel",
+    "type": "VCEP",
+    "cdwg": "Somatic Cancer CDWG",
+    "url": "https://clinicalgenome.org/affiliation/50089/",
+    "status": "Active"
+  }
+]

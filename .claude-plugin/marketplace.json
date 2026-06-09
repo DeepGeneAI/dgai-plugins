@@ -40,6 +40,11 @@
       "name": "skill-scout",
       "source": "./plugins/skill-scout",
       "description": "Sub-agent that searches external sources for existing skills before building new ones. Returns a scored candidate table and a USE AS-IS / ADAPT / BUILD FROM SCRATCH recommendation."
+    },
+    {
+      "name": "warm-path",
+      "source": "./plugins/warm-path",
+      "description": "Finds the shortest warm introduction path from a seed contact (Bryce, Amanda, Heidi) to any target person in the ClinGen/VCEP network. Reads context/known-contacts.yaml as the source of truth; returns path nodes and recommended intro framing. Requires: pip install networkx pyyaml."
     }
   ]
 }
