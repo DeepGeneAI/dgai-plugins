@@ -1,7 +1,7 @@
 {
   "name": "outreach",
   "version": "1.0.0",
-  "description": "Outreach email skills for the DeepGene/VCEP pipeline. Includes a generic research-rooted outreach email skill (outreach-email) and a DeepGene context layer (dgai-outreach) that wraps it with the Gene Report offer, VCEP audience framing, and Bryce's voice.",
+  "description": "Outreach and follow-up email skills for the DeepGene/VCEP pipeline. outreach-email: generic research-rooted first-touch email. dgai-outreach: DeepGene context layer for first-touch. followup-email: generic post-delivery follow-up. dgai-followup: DeepGene context layer for post-report follow-ups.",
   "author": {
     "name": "Abby Hatch",
     "email": "abby@deepgene.us"
