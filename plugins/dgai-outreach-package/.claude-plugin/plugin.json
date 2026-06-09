@@ -1,0 +1,9 @@
+{
+  "name": "dgai-outreach-package",
+  "version": "1.0.0",
+  "description": "Produces a complete outreach package for a VCEP contact in one command: warm path assessment, VCEP research briefing, and a draft email. Fans out three sub-tasks in parallel via the Task tool and synthesizes a single Markdown document. Requires warm-path, vcep-research, and outreach plugins.",
+  "author": {
+    "name": "Abby Hatch",
+    "email": "abby@deepgene.us"
+  }
+}
