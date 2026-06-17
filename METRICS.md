@@ -36,17 +36,6 @@ Update these by hand after each send/event.
 
 *No invocations recorded yet.*
 
-## Inactive skills (no invocations in last 2 weeks)
-
-- ⚠ outreach
-- ⚠ vcep-research
-- ⚠ dgai-hello
-- ⚠ dgai-clingen
-- ⚠ dgai-instrumentation
-- ⚠ invocation-log
-- ⚠ skill-scout
-- ⚠ warm-path
-
 <!-- METRICS:END -->
 
 ---

@@ -143,17 +143,6 @@ def build_stats_block(rows, published):
     else:
         lines.append("*No invocations recorded yet.*")
 
-    lines += [
-        "",
-        "## Inactive skills (no invocations in last 2 weeks)",
-        "",
-    ]
-    if inactive:
-        for s in inactive:
-            lines.append(f"- ⚠ {s}")
-    else:
-        lines.append("*All published skills used in the last 2 weeks.*")
-
     lines += ["", "<!-- METRICS:END -->"]
     return "\n".join(lines)
 
