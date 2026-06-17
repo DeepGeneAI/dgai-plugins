@@ -51,6 +51,18 @@ Update these by hand after each send/event.
 
 ---
 
+## Targets
+
+| Indicator | Type | Good | Trigger review |
+|---|---|---|---|
+| Skills published | Leading | Growing week-over-week | Flat for 4+ weeks |
+| Invocations per skill per week | Leading | Every published skill used at least once | Any skill at zero for 2 weeks |
+| Outreach packages sent | Outcome | 3+ per week during active outreach | 0 in any given week |
+
+Lagging indicators (revenue, customers acquired) are Bryce's to track.
+
+---
+
 ## Data sources
 
 - **Skill invocations:** `~/.claude/dgai-skill-invocations.jsonl` — written by the `dgai-instrumentation` plugin hook
