@@ -1,7 +1,7 @@
 # DeepGene Plugin KPI
 
 Two leading indicators and one outcome indicator.
-Stats are auto-generated — run `python3 scripts/update-metrics.py` to refresh.
+Stats are auto-generated — run `python3 scripts/update-metrics.py` to refresh METRICS.md, or `python3 scripts/update-metrics.py --sync-sheets` to also push to the [Google Sheet](https://docs.google.com/spreadsheets/d/1Sr5ccK7UQl83qPq6d7CaJVVeuxSX8PNfv9beb_vWDA8).
 
 ---
 
@@ -17,7 +17,7 @@ Update these by hand after each send/event.
 ---
 
 <!-- METRICS:START -->
-*Last updated: 2026-06-09 14:58 UTC*
+*Last updated: 2026-06-16 08:01 UTC*
 
 ## Skills published
 

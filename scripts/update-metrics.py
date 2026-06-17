@@ -9,8 +9,20 @@ Manual counters (outreach_packages_sent, etc.) live above that block
 and are never touched.
 
 Usage:
-    python3 scripts/update-metrics.py
+    python3 scripts/update-metrics.py                  # update METRICS.md only
+    python3 scripts/update-metrics.py --sync-sheets    # also sync to Google Sheet
+
+Google Sheets sync (first run only):
+    pip install gspread google-auth-oauthlib
+    Download OAuth2 Desktop credentials from Google Cloud Console and save to
+    ~/.config/gspread/credentials.json
+    On first run with --sync-sheets, a browser window will open to authorize.
+    Subsequent runs use the saved token automatically.
+
+Sheet ID is read from the DGAI_SHEET_ID environment variable, or falls back
+to the hardcoded default below.
 """
+import argparse
 import datetime
 import json
 import pathlib
@@ -24,6 +36,9 @@ MARKETPLACE = REPO_ROOT / ".claude-plugin" / "marketplace.json"
 
 DEDUP_WINDOW_SECONDS = 60
 INACTIVE_WEEKS = 2
+
+# Sheet created 2026-06-16. Override with DGAI_SHEET_ID env var.
+DEFAULT_SHEET_ID = "1Sr5ccK7UQl83qPq6d7CaJVVeuxSX8PNfv9beb_vWDA8"
 
 
 def load_invocations():
@@ -162,12 +177,113 @@ def update_metrics_md(stats_block):
     print(f"Updated {METRICS_MD}")
 
 
+def read_manual_counters():
+    """Parse outreach_packages_sent and responses_received from METRICS.md."""
+    counters = {"outreach_packages_sent": 0, "responses_received": 0}
+    if not METRICS_MD.exists():
+        return counters
+    content = METRICS_MD.read_text(encoding="utf-8")
+    for key in counters:
+        m = re.search(rf"\|\s*{key}\s*\|\s*(\d+)\s*\|", content)
+        if m:
+            counters[key] = int(m.group(1))
+    return counters
+
+
+def sync_to_sheets(rows, published, sheet_id):
+    """Write Summary and Invocations tabs to the Google Sheet via gspread."""
+    try:
+        import gspread
+    except ImportError:
+        print(
+            "gspread not installed. Run: pip install gspread google-auth-oauthlib",
+            file=sys.stderr,
+        )
+        return
+
+    try:
+        gc = gspread.oauth()
+    except Exception as e:
+        print(f"Sheets auth failed: {e}", file=sys.stderr)
+        return
+
+    sh = gc.open_by_key(sheet_id)
+    now = datetime.datetime.now(datetime.timezone.utc)
+    weekly = invocations_per_skill_per_week(rows)
+    inactive = inactive_skills(rows, published)
+    manual = read_manual_counters()
+
+    # --- Summary tab ---
+    try:
+        ws = sh.worksheet("Summary")
+    except gspread.exceptions.WorksheetNotFound:
+        ws = sh.add_worksheet(title="Summary", rows=10, cols=2)
+
+    ws.clear()
+    ws.update(
+        range_name="A1",
+        values=[
+            ["key", "value"],
+            ["last_updated", now.isoformat()],
+            ["skills_published", len(published)],
+            ["invocations_last_7d", json.dumps(weekly)],
+            ["inactive_skills", json.dumps(inactive)],
+            ["outreach_packages_sent", manual["outreach_packages_sent"]],
+            ["responses_received", manual["responses_received"]],
+        ],
+    )
+    print("  Summary tab updated.")
+
+    # --- Invocations tab ---
+    try:
+        ws_inv = sh.worksheet("Invocations")
+    except gspread.exceptions.WorksheetNotFound:
+        ws_inv = sh.add_worksheet(title="Invocations", rows=1000, cols=6)
+
+    ws_inv.clear()
+    headers = ["timestamp", "session_id", "skill_name", "plugin",
+               "input_tokens_estimate", "output_tokens_estimate"]
+    inv_rows = [headers] + [
+        [
+            r.get("timestamp", ""),
+            r.get("session_id", ""),
+            r.get("skill_name", ""),
+            r.get("plugin", "") or "",
+            r.get("input_tokens_estimate", ""),
+            r.get("output_tokens_estimate", ""),
+        ]
+        for r in rows
+    ]
+    ws_inv.update(range_name="A1", values=inv_rows)
+    print(f"  Invocations tab updated ({len(rows)} rows).")
+    print(f"  Sheet: https://docs.google.com/spreadsheets/d/{sheet_id}")
+
+
 def main():
+    parser = argparse.ArgumentParser(description="Update METRICS.md and optionally sync to Google Sheets.")
+    parser.add_argument(
+        "--sync-sheets",
+        action="store_true",
+        help="Also sync metrics to the Google Sheet.",
+    )
+    parser.add_argument(
+        "--sheet-id",
+        default=None,
+        help="Google Sheet ID to sync to (overrides DGAI_SHEET_ID env var and default).",
+    )
+    args = parser.parse_args()
+
     rows = load_invocations()
     published = skills_published()
     stats = build_stats_block(rows, published)
     update_metrics_md(stats)
     print(f"  {len(rows)} deduplicated invocations · {len(published)} skills published")
+
+    if args.sync_sheets:
+        import os
+        sheet_id = args.sheet_id or os.environ.get("DGAI_SHEET_ID") or DEFAULT_SHEET_ID
+        print(f"  Syncing to Sheet {sheet_id}...")
+        sync_to_sheets(rows, published, sheet_id)
 
 
 if __name__ == "__main__":
